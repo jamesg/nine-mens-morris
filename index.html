@@ -1,0 +1,86 @@
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Nine Men's Morris</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+</script>
+</head>
+
+<body>
+
+<div>
+    <h1>Nine Men's Morris</h1>
+    <p>
+    A Javascript implementation of the ancient strategy game for two players.
+    </p>
+    <h2>Rules</h2>
+    <p>
+    The game has two stages.  In the first stage, players start with nine men
+    each and take turns to place them on any unoccupied point.  Three men of
+    the same player placed along a straight line form a mill.  When a player
+    forms a mill, they may remove one of their opponent's men.
+    </p>
+    <p>
+    Once both players have placed all nine men, they take turns to move their
+    own men one step at a time along the board lines.  Whenever a player forms
+    a mill, they may remove one man from their opponent.
+    </p>
+    <h2>Strategy</h2>
+    <p>
+    A good strategy is to place men along two parallel lines, so that you can
+    form a mill on every turn by moving a man between the two lines.
+    </p>
+    <h2>Alternative Rules</h2>
+    <p>
+    Some versions of the game enter a third stage when one player is reduced to
+    three men.  The weaker player no longer needs to move men one space each
+    turn, but may 'fly' to any unoccupied point on the board.
+    Most rules stipulate that when removing an opponent's man, a man not in a
+    mill should be selected if possible.  This minor rule is omitted in this
+    version.
+    </p>
+</div>
+
+<div>
+    <form id="start-form" onsubmit="return startGame()">
+        <h3>Red Player</h3>
+        <fieldset>
+            <input type="radio" id="p0human" name="player0" value="human" checked>
+            <label for="p0human">Human</label>
+            <input type="radio" id="p0comp" name="player0" value="comp">
+            <label for="p0comp">Computer</label>
+        </fieldset>
+        <h3>Yellow Player</h3>
+        <fieldset>
+            <input type="radio" id="p1human" name="player1" value="human">
+            <label for="p1human">Human</label>
+            <input type="radio" id="p1comp" name="player1" value="comp" checked>
+            <label for="p1comp">Computer</label>
+        </fieldset>
+        <button type="submit">
+            Start Game
+        </button>
+        <button type="button" onclick="stopGame()">
+            Stop Game
+        </button>
+    </form>
+</div>
+
+<div>
+    <canvas id="board">
+    </canvas>
+</div>
+
+<div>
+    <p id="status">
+</div>
+
+</div>
+
+<script type="text/javascript" src="nmm.js"></script>
+
+</body>
+
