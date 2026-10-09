@@ -98,7 +98,7 @@ var Dimension = {
     hover: 0.35
 };
 
-var Player = ['Red', 'Yellow'];
+var Player = ['Vermelho', 'Amarelo'];
 
 // Create an empty board, or, if 'pieces' is provided, use it as a nested array
 // addressed by (shell, angle).
@@ -444,8 +444,8 @@ var Game = function(players, canvas, statusElement) {
             }).bind(this);
     canvas.addEventListener('mouseout', this._mouseOutListener);
 
-    this.setStatus('First player: ' + Player[this._nextPlayer]);
-    if(this._players[this._nextPlayer] == 'comp')
+   this.setStatus('Primeiro jogador: ' + Player[this._nextPlayer]);
+   if(this._players[this._nextPlayer] == 'comp')
         this.aiTurn(this._nextPlayer);
     this.render();
 };
@@ -545,25 +545,25 @@ Game.prototype = {
     switchPlayer: function() {
         this._expectTake = false;
         if(this._board.finished()) {
-            this.setStatus('The game is finished, ' + Player[this._board.winner()] + ' wins.');
-            return;
+           this.setStatus('O jogo terminou, ' + Player[this._board.winner()] + ' venceu.');
+           return;
         }
         this._nextPlayer = (this.nextPlayer() + 1) % 2;
         switch(this._players[this._nextPlayer]) {
         case 'comp':
-            this.setStatus('AI move: ' + Player[this._nextPlayer]);
-            setTimeout(this.aiTurn.bind(this), 1);
+           this.setStatus('Jogada do computador: ' + Player[this._nextPlayer]);
+           setTimeout(this.aiTurn.bind(this), 1);
             break;
         case 'human':
-            this.setStatus('Next player: ' + Player[this.nextPlayer()]);
-            break;
+           this.setStatus('Próximo jogador: ' + Player[this.nextPlayer()]);
+           break;
         }
     },
     expectTake: function() {
         this._expectTake = true;
         this.setStatus(
-                Player[this._nextPlayer] + ', take a man from your opponent'
-                );
+                Player[this._nextPlayer] + ', retire uma peça do seu adversário'
+            );
     },
     moveExpected: function() {
         return !this._expectTake && (this._board.stage() == Board.MOVING);
