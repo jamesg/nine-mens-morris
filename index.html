@@ -2,7 +2,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Nine Men's Morris</title>
+<title>Trilha</title>
 <style type="text/css">
 </style>
 <script type="text/javascript">
@@ -12,59 +12,62 @@
 <body>
 
 <div>
-    <h1>Nine Men's Morris</h1>
+    <h1>Trilha</h1>
     <p>
-    A Javascript implementation of the ancient strategy game for two players.
+    Uma implementação em JavaScript do antigo jogo de estratégia para dois jogadores.
     </p>
-    <h2>Rules</h2>
+    <h2>Regras</h2>
     <p>
-    The game has two stages.  In the first stage, players start with nine men
-    each and take turns to place them on any unoccupied point.  Three men of
-    the same player placed along a straight line form a mill.  When a player
-    forms a mill, they may remove one of their opponent's men.
+    O jogo tem duas etapas. Na primeira etapa, cada jogador começa com nove
+    peças e, na sua vez, coloca uma peça em qualquer ponto desocupado. Três
+    peças do mesmo jogador alinhadas em uma linha reta formam um moinho. Quando
+    um jogador forma um moinho, ele pode remover uma das peças do adversário.
     </p>
     <p>
-    Once both players have placed all nine men, they take turns to move their
-    own men one step at a time along the board lines.  Whenever a player forms
-    a mill, they may remove one man from their opponent.
+    Depois que os dois jogadores colocaram as nove peças, eles se alternam
+    movendo suas próprias peças, um passo por vez, ao longo das linhas do
+    tabuleiro. Sempre que um jogador forma um moinho, ele pode remover uma peça
+    do adversário.
     </p>
-    <h2>Strategy</h2>
+    <h2>Estratégia</h2>
     <p>
-    A good strategy is to place men along two parallel lines, so that you can
-    form a mill on every turn by moving a man between the two lines.
+    Uma boa estratégia é colocar as peças em duas linhas paralelas, para que
+    você possa formar um moinho a cada jogada, movendo uma peça de uma linha
+    para a outra.
     </p>
-    <h2>Alternative Rules</h2>
+    <h2>Regras Alternativas</h2>
     <p>
-    Some versions of the game enter a third stage when one player is reduced to
-    three men.  The weaker player no longer needs to move men one space each
-    turn, but may 'fly' to any unoccupied point on the board.
-    Most rules stipulate that when removing an opponent's man, a man not in a
-    mill should be selected if possible.  This minor rule is omitted in this
-    version.
+    Algumas versões do jogo têm uma terceira etapa, que começa quando um
+    jogador fica com apenas três peças. O jogador mais fraco não precisa mais
+    mover as peças um espaço por vez, e pode "voar" para qualquer ponto
+    desocupado do tabuleiro.
+    A maioria das regras determina que, ao remover uma peça do adversário,
+    deve-se escolher, se possível, uma peça que não esteja em um moinho. Essa
+    pequena regra foi omitida nesta versão.
     </p>
 </div>
 
 <div>
     <form id="start-form" onsubmit="return startGame()">
-        <h3>Red Player</h3>
+        <h3>Jogador Vermelho</h3>
         <fieldset>
             <input type="radio" id="p0human" name="player0" value="human" checked>
-            <label for="p0human">Human</label>
+            <label for="p0human">Humano</label>
             <input type="radio" id="p0comp" name="player0" value="comp">
-            <label for="p0comp">Computer</label>
+            <label for="p0comp">Computador</label>
         </fieldset>
-        <h3>Yellow Player</h3>
+        <h3>Jogador Amarelo</h3>
         <fieldset>
             <input type="radio" id="p1human" name="player1" value="human">
-            <label for="p1human">Human</label>
+            <label for="p1human">Humano</label>
             <input type="radio" id="p1comp" name="player1" value="comp" checked>
-            <label for="p1comp">Computer</label>
+            <label for="p1comp">Computador</label>
         </fieldset>
         <button type="submit">
-            Start Game
+            Iniciar Jogo
         </button>
         <button type="button" onclick="stopGame()">
-            Stop Game
+            Parar Jogo
         </button>
     </form>
 </div>
@@ -83,4 +86,3 @@
 <script type="text/javascript" src="nmm.js"></script>
 
 </body>
-
